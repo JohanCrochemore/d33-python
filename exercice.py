@@ -112,3 +112,51 @@ data = [("id1", 10, "actif"), ("id2", 15, "inactif"), ("id3", 20, "actif")]
 resultat = traiter_donnees(data)
 
 print(resultat)
+
+# Dictionnaires
+# Exercice 16 : Acceder a une cle
+
+livre = {'titre':"Les Miserables",'auteur':"Victor Hugo",'annee':'1862'}
+
+print(livre['auteur'])
+
+# Exercice 17 : Modification et ajout de valeur
+
+livre['annee'] = '1865'
+livre['genre'] = 'Roman'
+
+print(livre)
+
+# Exercice 18 : Affichage des paire clé valeurs
+
+for key, value in livre.items():
+    print(key.capitalize() + ' : ' + value)
+
+# Exercice 19 : Fusion de 2 dictionnaires
+
+dictionnaire1 = {'un':1,'deux':2,'trois':3}
+
+dictionnaire2 = {'quatre':4,'cinq':5,'six':6}
+
+dictionnaire1.update(dictionnaire2)
+
+print(dictionnaire1)
+
+# Exercice 20 : Nouveau dictionnaire à partir de 2 dictionnaires
+
+def dictionnaire_croise(dico1, dico2):
+    dico_croise = {}
+
+    for key,value in dico2.items():
+        if value in dico1:
+            dico_croise[value] = dico1[value]
+
+    return dico_croise
+
+dico1 = {"a": 1, "b": 2, "c": 3}
+
+dico2 = {"x": "a", "y": "b"}
+
+resultat_dico_croise = dictionnaire_croise(dico1, dico2)
+
+print(resultat_dico_croise)
