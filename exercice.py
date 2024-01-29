@@ -1,3 +1,4 @@
+import re
 # String
 # Exercice 1  : Prendre une chaîne de caractères et retourne la chaîne inversé
 
@@ -47,6 +48,13 @@ def mot_le_plus_long(chaine=""):
     return plus_long
 
 print(mot_le_plus_long('Ma chaine de caractere'))
+
+# Exercice 6 : regex match
+
+match_regex = r"\d{2}\/\d{2}\/\d{4}"
+validate_string = "Les dates importantes sont 12/05/2022 et 23/11/2023"
+
+print(re.findall(match_regex, validate_string))
 
 # Listes
 # Exercice 7 : Liste reverse
@@ -160,3 +168,33 @@ dico2 = {"x": "a", "y": "b"}
 resultat_dico_croise = dictionnaire_croise(dico1, dico2)
 
 print(resultat_dico_croise)
+
+# Ensembles (set)
+
+# Exercice 21 : Set sans les multiples de 3
+
+def intersect_without_multiple_three(set1, set2):
+    set1.intersection(set2)
+    set_intersect = set()
+    for value in set1:
+        if value % 3 != 0:
+            set_intersect.add(value)
+    return set_intersect
+
+set1 = {1, 2, 3, 4, 6, 9}
+
+set2 = {2, 3, 5, 6, 7, 9}
+
+print(intersect_without_multiple_three(set1,set2))
+
+# Exercice 22 : Union moins une valeur
+
+def union_excluding_n(list_of_sets, n):    
+    set_intersect = set.union(*list_of_sets)
+    set_intersect.remove(n)
+    return set_intersect
+
+list_of_sets = [{1, 2, 3}, {3, 4, 5}, {5, 6, 7}]
+n = 5
+print(union_excluding_n(list_of_sets, n))
+
