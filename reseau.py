@@ -36,7 +36,7 @@ def monitor_cpu_usage(duration=30):
         cpu_percent = psutil.cpu_percent(interval=5)
         print(f"% du CPU : {cpu_percent}%")
        
-monitor_cpu_usage(15)
+# monitor_cpu_usage(15)
         
 print("Exercice 5 : shutil")
 
