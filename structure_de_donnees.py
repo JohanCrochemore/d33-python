@@ -174,9 +174,9 @@ print(resultat_dico_croise)
 # Exercice 21 : Set sans les multiples de 3
 
 def intersect_without_multiple_three(set1, set2):
-    set1.intersection(set2)
+    set3 = set1.union(set2)
     set_intersect = set()
-    for value in set1:
+    for value in set3:
         if value % 3 != 0:
             set_intersect.add(value)
     return set_intersect
