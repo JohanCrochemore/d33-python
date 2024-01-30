@@ -2,7 +2,6 @@ import socket
 import platform
 import os
 import psutil
-import time
 import shutil
 
 print("Exercice 1 : Socket")
@@ -36,9 +35,8 @@ def monitor_cpu_usage(duration=30):
     for _ in range(duration // 5):
         cpu_percent = psutil.cpu_percent(interval=5)
         print(f"% du CPU : {cpu_percent}%")
-        time.sleep(5)
-
-# monitor_cpu_usage(10)
+       
+monitor_cpu_usage(15)
         
 print("Exercice 5 : shutil")
 
