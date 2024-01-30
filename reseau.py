@@ -2,6 +2,8 @@ import socket
 import platform
 import os
 import psutil
+import time
+import shutil
 
 print("Exercice 1 : Socket")
 def afficher_info_system():
@@ -26,6 +28,18 @@ def afficher_infos_dossier(file=""):
 
 print(afficher_infos_dossier(r"C:\Users\itaka\Documents\CROCHEMORE_Johan"))
 
-print("Exercice 3 : Psutil")
+print("Exercice 3 : psutil")
 
 print(psutil.virtual_memory())
+
+def monitor_cpu_usage(duration=30):
+    for _ in range(duration // 5):
+        cpu_percent = psutil.cpu_percent(interval=5)
+        print(f"% du CPU : {cpu_percent}%")
+        time.sleep(5)
+
+# monitor_cpu_usage(10)
+        
+print("Exercice 5 : shutil")
+
+print(shutil.disk_usage((r"C:")))
